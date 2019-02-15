@@ -8,6 +8,11 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     }
     console.log('Connected to Mongodb server')
 
+    // db.collection('todos').find({}).toArray().then((todos) => {
+    //     console.log(todos.length)
+    //     console.log(todos)
+    // })
+
     // db.collection('Todos').find({ 
     //     _id: new ObjectID("5c668006a0874f6c011c1286")
     // }).toArray().then((docs) => {
@@ -23,11 +28,11 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
     //     console.log('Unable to fetch to do', err)
     // })
 
-    db.collection('Users').find({
-        name: 'Andrew'
-    }).toArray().then((res) => {
-        console.log(JSON.stringify(res, undefined, 2))
-    })
+    // db.collection('Users').find({
+    //     name: 'Andrew'
+    // }).toArray().then((res) => {
+    //     console.log(JSON.stringify(res, undefined, 2))
+    // })
 
     // db.close()
 })
