@@ -1,11 +1,13 @@
 let  express  = require('express')
 let  bodyParser  = require('body-parser')
 let { ObjectID } = require('mongodb')
+
 let { mongoose } = require('./db/mongoose')
 let { Todo } = require('./models/todo')
 let { User } = require('./models/user')
 
 let app = express()
+const port = process.env.PORT || 3000 // set port for heroku
 
 app.use(bodyParser.json())
 
@@ -46,8 +48,8 @@ app.get('/todos/:id', (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log('Starting on port 3000')
+app.listen(port, () => {
+    console.log(`Starting up at port ${port}`)
 })
 
 module.exports = {
