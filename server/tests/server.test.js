@@ -86,7 +86,7 @@ describe('GET /todos/:id', () => {
             .get(`/todos/${todos[0]._id.toHexString()}`)
             .expect(200)
             .expect((res) => { // expect this line is from supertest
-                expect(res.body.result.text).toBe(todos[0].text) // expect this line is from expect library
+                expect(res.body.todo.text).toBe(todos[0].text) // expect this line is from expect library
             })
             .end(done)
     })
